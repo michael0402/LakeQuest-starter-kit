@@ -1,0 +1,4 @@
+name: lakequest-example-submission
+version: 0.1.0
+entrypoint: run.sh
+description: Minimal LakeQuest submission example.

@@ -1,0 +1,5 @@
+# Optional: add Python packages needed by your held-out code submission.
+# If you add packages here, also include matching wheel files in ./wheels/.
+#
+# The official image already includes:
+# numpy, pandas, pyarrow, scipy, scikit-learn, torch
