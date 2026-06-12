@@ -35,6 +35,10 @@ Each prediction line is a JSON object:
 
 The scorer reports answer F1, object ID F1, provenance ID F1, and coverage. The main `overall_score` is answer-only; object/provenance scores are diagnostic attribution metrics.
 
+The public data zip contains a frozen `raw_lake_snapshot/`. For example, bank
+`policy_document` IDs map to text in
+`raw_lake_snapshot/lakes/bank/policy_documents.jsonl`.
+
 ## Local Public Scoring
 
 For Open Dev, download the Codabench input/reference files and run:

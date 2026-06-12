@@ -82,6 +82,10 @@ The downloadable shared public lake package also contains `raw_lake_snapshot/`,
 which is the frozen lake content participants should use instead of crawling
 live sources.
 
+For example, bank `policy_document` object IDs in
+`lakes/bank/corpus_objects.parquet` map to policy text in
+`raw_lake_snapshot/lakes/bank/policy_documents.jsonl`.
+
 ## Python Requirements
 
 Held-out submissions run inside the organizer Docker image:
