@@ -25,15 +25,15 @@ See `starter_kit/README.md` for the required submission format.
 Each prediction line is a JSON object:
 
 ```json
-{"qa_id": "example-id", "answer": "answer text", "object_ids": ["object-id"], "provenance_ids": ["provenance-id"]}
+{"qa_id": "example-id", "answer": "answer text"}
 ```
 
 - `qa_id` identifies the question.
-- `answer` is the natural-language answer.
-- `object_ids` are supporting public lake object IDs.
-- `provenance_ids` are finer-grained supporting evidence IDs.
+- `answer` is the natural-language answer and is the main leaderboard target.
+- `object_ids` are optional supporting public lake object IDs from `lakes/<lake>/corpus_objects.parquet`.
+- `provenance_ids` are optional finer-grained gold evidence IDs attached to benchmark references.
 
-The scorer reports answer F1, object ID F1, provenance ID F1, coverage, and an overall weighted score.
+The scorer reports answer F1, object ID F1, provenance ID F1, and coverage. The main `overall_score` is answer-only; object/provenance scores are diagnostic attribution metrics.
 
 ## Local Public Scoring
 

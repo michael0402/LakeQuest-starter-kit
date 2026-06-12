@@ -29,9 +29,12 @@ REFERENCE_DIR = Path(os.getenv("LAKEQUEST_REFERENCE_DIR", INPUT_ROOT / "ref"))
 RESULT_DIR = Path(os.getenv("LAKEQUEST_RESULT_DIR", INPUT_ROOT / "res"))
 OUTPUT_DIR = Path(os.getenv("LAKEQUEST_SCORE_OUTPUT_DIR", APP_ROOT / "output"))
 
-ANSWER_WEIGHT = 0.70
-OBJECT_WEIGHT = 0.15
-PROVENANCE_WEIGHT = 0.15
+# The public leaderboard is answer-only. Supporting object/provenance IDs are
+# retained as diagnostic attribution metrics because their gold labels are
+# hidden for Open Test and Closed Test.
+ANSWER_WEIGHT = 1.00
+OBJECT_WEIGHT = 0.00
+PROVENANCE_WEIGHT = 0.00
 TOKEN_RE = re.compile(r"[A-Za-z0-9]+")
 LLM_ALLOWED_SCORES = (0.0, 0.5, 1.0)
 
@@ -391,11 +394,7 @@ def _score_row(reference: pd.Series, prediction: dict[str, Any] | None) -> dict[
         [] if prediction is None else _as_list(prediction.get("provenance_ids")),
     )
     answered = bool(answer)
-    overall = (
-        ANSWER_WEIGHT * answer_f1
-        + OBJECT_WEIGHT * object_f1
-        + PROVENANCE_WEIGHT * provenance_f1
-    )
+    overall = ANSWER_WEIGHT * answer_f1
     return {
         "qa_id": reference["qa_id"],
         "domain": reference["domain"],
@@ -458,11 +457,7 @@ def _apply_llm_judging(
 
     for row in rows:
         if row["llm_judge_available"] and not math.isnan(float(row["llm_answer_score"])):
-            row["llm_overall_score"] = (
-                ANSWER_WEIGHT * float(row["llm_answer_score"])
-                + OBJECT_WEIGHT * float(row["object_f1"])
-                + PROVENANCE_WEIGHT * float(row["provenance_f1"])
-            )
+            row["llm_overall_score"] = float(row["llm_answer_score"])
 
 
 def main() -> int:

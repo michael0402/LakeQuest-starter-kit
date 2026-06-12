@@ -17,23 +17,31 @@ submission.zip
 Each line must be:
 
 ```json
-{"qa_id": "example-id", "answer": "answer text", "object_ids": ["object-id"], "provenance_ids": ["provenance-id"]}
+{"qa_id": "example-id", "answer": "answer text"}
+```
+
+You may optionally include:
+
+```json
+{"qa_id": "example-id", "answer": "answer text", "object_ids": ["object-id"], "provenance_ids": ["evidence-id"]}
 ```
 
 Field meanings:
 
 - `qa_id`: the unique question identifier from `questions.jsonl` or `questions.parquet`. The scorer matches predictions to questions using this field.
-- `answer`: your natural-language answer. This is required. Deterministic scoring computes token F1 against the reference answer; optional organizer LLM judging compares this text to the reference answer for factual correctness.
-- `object_ids`: optional list of supporting lake object IDs. These IDs come from the public lake files, especially `lakes/<lake>/corpus_objects.parquet`. They identify the objects, tables, documents, records, or other lake artifacts your system used to answer the question. The scorer computes set F1 against the gold supporting object IDs.
-- `provenance_ids`: optional list of finer-grained evidence/provenance IDs. These identify specific supporting provenance records or evidence units for the answer. The scorer computes set F1 against the gold provenance IDs.
+- `answer`: your natural-language answer. This is required and is the main leaderboard score. Deterministic scoring computes token F1 against the reference answer; optional organizer LLM judging compares this text to the reference answer for factual correctness.
+- `object_ids`: optional list of supporting lake object IDs. These IDs come from `lakes/<lake>/corpus_objects.parquet`. They identify the lake artifacts your system used, such as Hugging Face cards, bank tables, policy documents, DrugBank tables, or drug passages. The scorer reports diagnostic set F1 against gold supporting object IDs, but this is not part of the main leaderboard score.
+- `provenance_ids`: optional list of finer-grained gold evidence IDs. These are internal evidence records attached to the benchmark references. They are useful for attribution diagnostics when released, but they are not required for Open Test or Closed Test predictions and are not part of the main leaderboard score.
 
 Example:
 
 ```json
-{"qa_id": "aiml_000123", "answer": "The model was trained with a batch size of 64.", "object_ids": ["paper_17"], "provenance_ids": ["paper_17::table_2::row_4"]}
+{"qa_id": "aiml_000123", "answer": "The model was trained with a batch size of 64.", "object_ids": ["model_card:example-model"], "provenance_ids": []}
 ```
 
-If your system cannot reliably identify evidence, submit empty lists for `object_ids` and `provenance_ids`. Your answer will still be scored, but the object/provenance components will be zero for those questions.
+If your system cannot reliably identify evidence, omit `object_ids` and
+`provenance_ids` or submit empty lists. Your answer will still receive the main
+leaderboard score.
 
 ## Code Submission Format
 
@@ -54,10 +62,10 @@ Your code must write:
 Each line must be a JSON object:
 
 ```json
-{"qa_id": "example-id", "answer": "answer text", "object_ids": ["object-id"], "provenance_ids": ["provenance-id"]}
+{"qa_id": "example-id", "answer": "answer text"}
 ```
 
-`answer` is required. `object_ids` and `provenance_ids` are optional but scored.
+`answer` is required. `object_ids` and `provenance_ids` are optional diagnostics.
 
 The input directory contains:
 
@@ -69,6 +77,10 @@ lakes/<lake>/manifest.json
 lakes/<lake>/corpus_objects.parquet
 lakes/<lake>/split_entities.parquet
 ```
+
+The downloadable shared public lake package also contains `raw_lake_snapshot/`,
+which is the frozen lake content participants should use instead of crawling
+live sources.
 
 ## Python Requirements
 
