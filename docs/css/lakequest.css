@@ -1,0 +1,251 @@
+body {
+  color: #212529;
+  font-family: "Lora", "Times New Roman", serif;
+  font-size: 18px;
+}
+
+p {
+  line-height: 1.55;
+  margin: 22px 0;
+}
+
+a {
+  color: #0085a1;
+}
+
+a:hover,
+a:focus {
+  color: #00657b;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.navbar,
+button,
+.btn,
+table {
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+h2 {
+  font-size: 30px;
+  font-weight: 800;
+  margin: 0 0 18px;
+}
+
+h4 {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+h5 {
+  font-size: 17px;
+  font-weight: 800;
+  margin-top: 22px;
+}
+
+pre {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  color: #333;
+  font-size: 13px;
+  line-height: 1.45;
+  padding: 14px;
+  white-space: pre-wrap;
+}
+
+code {
+  color: #1f5f76;
+  font-size: 85%;
+}
+
+#mainNav {
+  background: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#mainNav .navbar-brand {
+  color: #343a40;
+  font-size: 20px;
+  font-weight: 800;
+}
+
+#mainNav .navbar-nav > li.nav-item > a {
+  color: #343a40;
+  font-size: 12px;
+  font-weight: 800;
+  padding: 10px 20px;
+}
+
+#mainNav .navbar-toggler {
+  color: #777;
+  font-size: 12px;
+  padding: 12px;
+  text-transform: uppercase;
+}
+
+.masthead {
+  background: #102838 url("../assets/lakequest-logo.png") center 58% / 290px 290px no-repeat;
+  color: #fff;
+  margin-bottom: 42px;
+  position: relative;
+}
+
+.masthead .overlay {
+  background-color: #000;
+  bottom: 0;
+  left: 0;
+  opacity: 0.58;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.site-heading {
+  padding: 170px 0 150px;
+  position: relative;
+  text-align: center;
+  z-index: 2;
+}
+
+.site-heading h1 {
+  font-size: 74px;
+  font-weight: 800;
+  margin-top: 0;
+}
+
+.site-heading .subheading {
+  display: block;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 1.25;
+  margin-top: 10px;
+}
+
+#main {
+  max-width: 1180px;
+}
+
+.list-group-item {
+  border-radius: 0 !important;
+  padding: 20px;
+}
+
+.btn {
+  border: 0;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 10px 18px;
+}
+
+.btn-info {
+  background-color: #17a2b8;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.section-block {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 36px;
+  padding-bottom: 28px;
+}
+
+.table {
+  font-size: 14px;
+}
+
+.table thead th {
+  background: #f2f7f9;
+  border-bottom: 2px solid #c9d9df;
+  font-weight: 800;
+  vertical-align: middle;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}
+
+.leaderboard td,
+.leaderboard th {
+  text-align: center;
+}
+
+.leaderboard td:nth-child(2),
+.leaderboard th:nth-child(2),
+.leaderboard td:nth-child(3),
+.leaderboard th:nth-child(3) {
+  text-align: left;
+}
+
+.total-row td {
+  font-weight: 800;
+}
+
+footer {
+  background: #181818;
+  color: #ddd;
+  font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin-top: 40px;
+  padding: 34px 0;
+  text-align: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+@media only screen and (min-width: 992px) {
+  #mainNav {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
+
+  #mainNav .navbar-brand,
+  #mainNav .navbar-nav > li.nav-item > a {
+    color: #fff;
+  }
+
+  #mainNav.scrolled {
+    background: #fff;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  body {
+    font-size: 16px;
+  }
+
+  .site-heading {
+    padding: 130px 0 105px;
+  }
+
+  .site-heading h1 {
+    font-size: 48px;
+  }
+
+  .site-heading .subheading {
+    font-size: 19px;
+  }
+
+  .masthead {
+    background-size: 220px 220px;
+  }
+}

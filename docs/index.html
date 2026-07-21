@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="LakeQuest is a benchmark for grounded question answering over structured and semi-structured data lakes.">
+    <meta name="author" content="LakeQuest">
+    <meta property="og:title" content="LakeQuest">
+    <meta property="og:description" content="A benchmark for grounded question answering over AIML, banking, and drug data lakes.">
+    <meta property="og:url" content="https://michael0402.github.io/LakeQuest/">
+    <meta property="og:image" content="https://michael0402.github.io/LakeQuest/assets/lakequest-logo.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://michael0402.github.io/LakeQuest/">
+    <link rel="icon" href="assets/lakequest-logo.png" type="image/png">
+    <title>LakeQuest</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic%7COpen+Sans:300,400,600,700,800" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/lakequest.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org/",
+        "@type": "Dataset",
+        "name": "LakeQuest",
+        "description": "LakeQuest evaluates grounded question answering systems over three data lakes: AIML, banking, and drug.",
+        "url": "https://michael0402.github.io/LakeQuest/",
+        "keywords": [
+          "question answering",
+          "data lakes",
+          "grounded QA",
+          "retrieval",
+          "provenance"
+        ],
+        "creator": {
+          "@type": "Person",
+          "name": "Michael Solodko"
+        }
+      }
+    </script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+      <div class="container">
+        <a class="navbar-brand" href="#top">LakeQuest</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          Menu
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#data">Data</a></li>
+            <li class="nav-item"><a class="nav-link" href="#leaderboard">Leaderboard</a></li>
+            <li class="nav-item"><a class="nav-link" href="#submit">Benchmarks</a></li>
+            <li class="nav-item"><a class="nav-link" href="#citation">Citation</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="masthead" id="top">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h1>LakeQuest</h1>
+              <span class="subheading">A Benchmark for Grounded Question Answering over Data Lakes</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="container" id="main">
+      <div class="row">
+        <section class="col-lg-4">
+          <div class="list-group">
+            <div class="list-group-item">
+              <h4>What is LakeQuest?</h4>
+              <p>LakeQuest evaluates systems that answer natural-language questions grounded in heterogeneous data lakes. The benchmark spans three domains: <strong>AIML</strong>, <strong>bank</strong>, and <strong>drug</strong>.</p>
+              <p>Systems are tested on answer correctness and, where applicable, evidence grounding over the source lake artifacts.</p>
+            </div>
+
+            <div class="list-group-item" id="data">
+              <h4>Getting started</h4>
+              <p>The public starter kit contains the participant-facing submission format, sample predictor, and local validation utilities.</p>
+              <p class="text-center">
+                <a href="https://github.com/michael0402/LakeQuest/tree/main/starter_kit" class="btn btn-success">Starter Kit</a>
+              </p>
+              <p class="text-center">
+                <a href="https://github.com/michael0402/LakeQuest/tree/main/public_data" class="btn btn-secondary">Benchmark Data</a>
+              </p>
+              <p class="text-center">
+                <a href="https://github.com/michael0402/LakeQuest/tree/main/scoring_program" class="btn btn-secondary">Scoring Program</a>
+              </p>
+            </div>
+
+            <div class="list-group-item" id="submit">
+              <h4>Benchmark tracks</h4>
+              <p>LakeQuest is hosted as three Codabench tracks because Codabench phases inside one competition must be sequential.</p>
+              <p class="text-center">
+                <a href="https://www.codabench.org/competitions/17066/" class="btn btn-info">LakeQuest Open Dev</a>
+              </p>
+              <p class="text-center">
+                <a href="https://www.codabench.org/competitions/17065/" class="btn btn-secondary">LakeQuest Open Test</a>
+              </p>
+              <p class="text-center">
+                <a href="https://www.codabench.org/competitions/17064/" class="btn btn-secondary">LakeQuest Closed Test</a>
+              </p>
+            </div>
+
+            <div class="list-group-item" id="citation">
+              <h4>Stay connected</h4>
+              <pre>@inproceedings{solodko2026lakequest,
+  title = {{LakeQuest}: A Three-Domain Benchmark for Grounded Question Answering across Data Lakes},
+  author = {Solodko, Michael and Gong, Steven and Yu, Guangwei and Gorti, Satya Krishna and Cresswell, Jesse C. and Zhong, Victor},
+  booktitle = {Proceedings of the Conference on Language Modeling (COLM)},
+  year = {2026}
+}</pre>
+            </div>
+          </div>
+        </section>
+
+        <section class="col-lg-8">
+          <div class="section-block">
+            <h2>Benchmark Splits</h2>
+            <p>LakeQuest uses separate open development, open test, and closed held-out code-evaluation tracks.</p>
+            <div class="table-responsive">
+              <table class="table table-striped table-sm">
+                <thead>
+                  <tr>
+                    <th>Lake</th>
+                    <th>Open Dev</th>
+                    <th>Open Test</th>
+                    <th>Closed Test</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>AIML</td><td>1,727</td><td>1,725</td><td>1,725</td></tr>
+                  <tr><td>Bank</td><td>1,021</td><td>1,020</td><td>1,020</td></tr>
+                  <tr><td>Drug</td><td>1,151</td><td>1,150</td><td>1,150</td></tr>
+                  <tr class="total-row"><td>Total</td><td>3,899</td><td>3,895</td><td>3,895</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section-block" id="leaderboard">
+            <h2>Leaderboard</h2>
+            <p>Official scores are maintained on Codabench. The table below mirrors the public metric layout.</p>
+            <h5>Open Test</h5>
+            <div class="table-responsive">
+              <table class="table table-hover leaderboard">
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Model</th>
+                    <th>Team</th>
+                    <th>Overall</th>
+                    <th>Answer F1</th>
+                    <th>Coverage</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>-</td>
+                    <td>Official submissions</td>
+                    <td>Codabench</td>
+                    <td colspan="3"><a href="https://www.codabench.org/competitions/17065/">View live leaderboard</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="section-block">
+            <h2>Evaluation</h2>
+            <p>Prediction submissions contain one <code>predictions.jsonl</code> file at the archive root. Each line must include a question ID and answer text.</p>
+            <pre>{"qa_id": "example-id", "answer": "answer text"}</pre>
+            <p>The main public score emphasizes answer quality. Optional evidence fields may be used for diagnostic grounding metrics when enabled by the organizers.</p>
+          </div>
+
+          <div class="section-block">
+            <h2>Tracks</h2>
+            <div class="table-responsive">
+              <table class="table table-sm">
+                <thead>
+                  <tr>
+                    <th>Track</th>
+                    <th>Questions</th>
+                    <th>Answers</th>
+                    <th>Submission</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="https://www.codabench.org/competitions/17066/">Open Dev</a></td>
+                    <td>Released</td>
+                    <td>Released</td>
+                    <td>Prediction zip</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.codabench.org/competitions/17065/">Open Test</a></td>
+                    <td>Released</td>
+                    <td>Hidden</td>
+                    <td>Prediction zip</td>
+                  </tr>
+                  <tr>
+                    <td><a href="https://www.codabench.org/competitions/17064/">Closed Test</a></td>
+                    <td>Hidden</td>
+                    <td>Hidden</td>
+                    <td>Runnable project zip</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer>
+      <div class="container">
+        <p>LakeQuest &middot; Grounded QA over data lakes</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

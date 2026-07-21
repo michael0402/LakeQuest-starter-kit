@@ -20,6 +20,20 @@ LakeQuest is split into three Codabench tracks:
 
 See `starter_kit/README.md` for the required submission format.
 
+## Project Website
+
+The LakeQuest project homepage lives in [`docs/`](docs/) and is configured for
+publication at <https://michael0402.github.io/LakeQuest/> through the GitHub
+Pages workflow. In the repository's **Settings → Pages** screen, select
+**GitHub Actions** as the source once; subsequent changes under `docs/` deploy
+automatically from `main`.
+
+The benchmark tracks are:
+
+- [LakeQuest Open Dev](https://www.codabench.org/competitions/17066/)
+- [LakeQuest Open Test](https://www.codabench.org/competitions/17065/)
+- [LakeQuest Closed Test (Code Evaluation)](https://www.codabench.org/competitions/17064/)
+
 ## Prediction Row Format
 
 Each prediction line is a JSON object:
